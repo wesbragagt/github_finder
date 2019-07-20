@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 export class Search extends Component {
     state = {
         text: ''
+    };
+
+    static propTypes = {
+        text: PropTypes.string.isRequired,
+        searchUsers: PropTypes.func.isRequired,
+        clearUsers: PropTypes.func.isRequired
     };
     onChange = event => {
         this.setState({
@@ -33,6 +39,7 @@ export class Search extends Component {
                         className="btn btn-dark btn-block"
                     />
                 </form>
+                <button className="btn btn-light btn-block" onClick={this.props.clearUsers}>Clear</button>
             </div>
         );
     }
