@@ -1,15 +1,18 @@
-import React, { Fragment, Component } from 'react';
+import React, { Component } from 'react';
 import Navbar from './Components/Layout/Navbar';
+import UserItem from './Components/Users/UserItem';
 import './App.css';
 
 class App extends Component {
     
+    
     render() {
        
-       const loading = true;
+       
         return (
             <div className="App">
                 <Navbar />
+                <UserItem/>
             </div>
         );
     }
