@@ -8,7 +8,8 @@ export class Search extends Component {
     static propTypes = {
         text: PropTypes.string.isRequired,
         searchUsers: PropTypes.func.isRequired,
-        clearUsers: PropTypes.func.isRequired
+        clearUsers: PropTypes.func.isRequired,
+        showClear: PropTypes.bool.isRequired
     };
     onChange = event => {
         this.setState({
@@ -39,7 +40,7 @@ export class Search extends Component {
                         className="btn btn-dark btn-block"
                     />
                 </form>
-                <button className="btn btn-light btn-block" onClick={this.props.clearUsers}>Clear</button>
+                {this.props.showClear && <button className="btn btn-light btn-block" onClick={this.props.clearUsers}>Clear</button>}
             </div>
         );
     }
